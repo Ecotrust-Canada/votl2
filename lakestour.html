@@ -1,0 +1,211 @@
+<!doctype><html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Voices On the Land</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/x-icon" href="odyssey/sandbox/favicon.png">
+  <link rel="icon" type="image/png" href="http://voicesontheland.org/projects/ce_atlas/group_images/Okanagan_Nation_Alliance949_3.jpg">
+
+  <!--Odyssey and Leaflet Links-->
+  <link rel="stylesheet" href="http://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/themes/css/cartodb.css">
+  <link rel="stylesheet" href="odyssey/sandbox/css/slides.css">
+  <script src="odyssey/vendor/modernizr-2.6.2.min.js"></script>
+  <link rel="stylesheet" href="leaflet/leaflet.css" />
+	<link rel="stylesheet" href="leaflet/label/dist/leaflet.label.css" />
+	<script src="leaflet/leaflet.js"></script>
+	<script src="leaflet/leaflet-src.js"></script>
+
+	<script src="leaflet/label/src/Label.js"></script>
+	<script src="leaflet/label/src/BaseMarkerMethods.js"></script>
+	<script src="leaflet/label/src/Marker.Label.js"></script>
+	<script src="leaflet/label/src/CircleMarker.Label.js"></script>
+	<script src="leaflet/label/src/Path.Label.js"></script>
+	<script src="leaflet/label/src/Map.Label.js"></script>
+	<script src="leaflet/label/src/FeatureGroup.Label.js"></script>
+	
+	<link rel="stylesheet" href="leaflet/marker/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="leaflet/marker/dist/MarkerCluster.Default.css" />
+    <script src="leaflet/marker/dist/leaflet.markercluster-src.js"></script>
+  
+  
+    <link rel="stylesheet" href="leaflet/minimap/src/Control.MiniMap.css" />
+    <script src="leaflet/minimap/src/Control.MiniMap.js"></script>
+  
+    <link rel="stylesheet" href="leaflet/mouseposition/src/L.Control.MousePosition.css" />
+    <script src="leaflet/mouseposition/src/L.Control.MousePosition.js"></script>
+	
+	<script type="text/javascript" src="jquery.js"></script>
+	
+	<!--Links to php scripts which convert postgres data to geojson-->  
+    <script src="http://voicesontheland.org/media/alex2.php"></script><!--Converts media table with videos to geojsonpoint-->
+    <!--Options: geotable - table name, fields - fields to include, varname  - javascript variable name-->
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=ona_boundary_line&fields=left_fid&varname=boundaryline"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=ona_landuseplan_boundary&fields=id&varname=lup"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=ona_ir&fields=nglshnm&varname=geojsonreserves"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=place_name_areas_new_4326&fields=name&varname=placenames"></script>
+	<script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=coyote_landmark_areas&fields=label&varname=coyote"></script>
+  
+  
+</head>
+<body>
+  <div id="map" style="width: 100%; height: 100%;"></div>
+
+  <div id="slides_container" style="display:block;">
+    <div id="dots"></div>
+
+    <div id="slides"></div>
+
+    <ul id="navButtons">
+      <li><a class="prev"></a></li>
+      <li><a class="next"></a></li>
+    </ul>
+  </div>
+
+  <div id="credits">
+    <!--<span class="title" id="title">Title</span>-->
+    <span class="author"><strong id="author">Built with</strong> <a href="http://cartodb.github.io/odyssey.js/">Odyssey.js</a><span>
+  </span></span></div>
+
+  <!--More Odyssey, and Leaflet Plugins-->
+  <script src="http://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/cartodb.js"></script>
+  <script src="odyssey/dist/odyssey.js" charset="UTF-8"></script>
+  
+
+  <script src = "js/slidestuff.js"></script>
+  <script src="js/styles.js"></script>
+  <script src="js/layers.js"></script>
+  <script src='js/template1.js'></script>
+
+  <!--<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-20934186-21', 'cartodb.github.io');
+    ga('send', 'pageview');
+  </script>-->
+
+  <script type="text/javascript" src="http://fast.fonts.net/jsapi/3af16084-ba56-49ca-b37d-0b49b59e1927.js"></script>
+
+<script type="text/template" id="md_template">
+```
+-title: "VOTL"
+-author: "ecotrust"
+```
+
+#Lakes
+```
+- center: [50.485316, -119.518520]
+- zoom: 7
+```
+
+
+
+#Mamit Lake
+```
+- center: [50.38, -120.806]
+- zoom: 14
+```
+
+#Stump Lake
+```
+- center: [50.36, -120.375]
+- zoom: 13
+```
+
+#Nicola Lake
+```
+- center: [50.18, -120.52]
+- zoom: 12
+```
+
+#Douglas Lake
+```
+- center: [50.15, -120.24]
+- zoom: 13
+```
+
+#Chapperon Lake
+```
+- center: [50.2, -120.056]
+- zoom: 13
+```
+
+#Pennask Lake
+```
+- center: [49.997, -120.13]
+- zoom: 13
+```
+
+
+#Mabel Lake
+```
+- center: [50.58, -118.73]
+- zoom: 14
+```
+
+#Sugar Lake
+```
+- center: [50.4, -118.52]
+- zoom: 14
+```
+
+#Swan Lake
+```
+- center: [50.32, -119.26]
+- zoom: 16
+```
+
+#Kalamalka Lake
+```
+- center: [50.175, -119.33]
+- zoom: 15
+```
+
+#Wood Lake
+```
+- center: [50.08, -119.39]
+- zoom: 15
+```
+
+#Ellison Lake
+```
+- center: [50.0, -119.395]
+- zoom: 16
+```
+
+#Okanagan Lake
+```
+- center: [49.86, -119.59]
+- zoom: 13
+```
+
+#Skaha Lake
+```
+- center: [49.41, -119.58]
+- zoom: 15
+```
+
+#Vaseaux Lake
+```
+- center: [49.286, -119.53]
+- zoom: 16
+```
+
+#Tuc-el-nuit Lake
+```
+- center: [49.2, -119.54]
+- zoom: 17
+```
+
+#Osoyoos Lake
+```
+- center: [49.02, -119.45]
+- zoom: 15
+```
+
+</script></body></html>

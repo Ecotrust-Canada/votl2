@@ -1,0 +1,235 @@
+<!doctype><html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Voices On the Land</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/x-icon" href="odyssey/sandbox/favicon.png">
+  <link rel="icon" type="image/png" href="http://voicesontheland.org/projects/ce_atlas/group_images/Okanagan_Nation_Alliance949_3.jpg">
+
+  <!--Odyssey and Leaflet Links-->
+  <link rel="stylesheet" href="http://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/themes/css/cartodb.css">
+  <link rel="stylesheet" href="odyssey/sandbox/css/slides.css">
+  <script src="odyssey/vendor/modernizr-2.6.2.min.js"></script>
+  <link rel="stylesheet" href="leaflet/leaflet.css" />
+	<link rel="stylesheet" href="leaflet/label/dist/leaflet.label.css" />
+	<script src="leaflet/leaflet.js"></script>
+	<script src="leaflet/leaflet-src.js"></script>
+
+	<script src="leaflet/label/src/Label.js"></script>
+	<script src="leaflet/label/src/BaseMarkerMethods.js"></script>
+	<script src="leaflet/label/src/Marker.Label.js"></script>
+	<script src="leaflet/label/src/CircleMarker.Label.js"></script>
+	<script src="leaflet/label/src/Path.Label.js"></script>
+	<script src="leaflet/label/src/Map.Label.js"></script>
+	<script src="leaflet/label/src/FeatureGroup.Label.js"></script>
+	
+	<link rel="stylesheet" href="leaflet/marker/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="leaflet/marker/dist/MarkerCluster.Default.css" />
+    <script src="leaflet/marker/dist/leaflet.markercluster-src.js"></script>
+  
+  
+    <link rel="stylesheet" href="leaflet/minimap/src/Control.MiniMap.css" />
+    <script src="leaflet/minimap/src/Control.MiniMap.js"></script>
+  
+    <link rel="stylesheet" href="leaflet/mouseposition/src/L.Control.MousePosition.css" />
+    <script src="leaflet/mouseposition/src/L.Control.MousePosition.js"></script>
+	
+	<script type="text/javascript" src="jquery.js"></script>
+	
+	<!--Links to php scripts which convert postgres data to geojson-->  
+    <script src="http://voicesontheland.org/media/alex2.php"></script><!--Converts media table with videos to geojsonpoint-->
+    <!--Options: geotable - table name, fields - fields to include, varname  - javascript variable name-->
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=ona_boundary_line&fields=left_fid&varname=boundaryline"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=ona_landuseplan_boundary&fields=id&varname=lup"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=ona_ir&fields=nglshnm&varname=geojsonreserves"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=place_name_areas_new_4326&fields=name&varname=placenames"></script>
+	<script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=coyote_landmark_areas&fields=label&varname=coyote"></script>
+  
+  
+</head>
+<body>
+  <div id="map" style="width: 100%; height: 100%;"></div>
+
+  <div id="slides_container" style="display:block;">
+    <div id="dots"></div>
+
+    <div id="slides"></div>
+
+    <ul id="navButtons">
+      <li><a class="prev"></a></li>
+      <li><a class="next"></a></li>
+    </ul>
+  </div>
+
+  <div id="credits">
+    <!--<span class="title" id="title">Title</span>-->
+    <span class="author"><strong id="author">Built with</strong> <a href="http://cartodb.github.io/odyssey.js/">Odyssey.js</a><span>
+  </span></span></div>
+
+  <!--More Odyssey, and Leaflet Plugins-->
+  <script src="http://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/cartodb.js"></script>
+  <script src="odyssey/dist/odyssey.js" charset="UTF-8"></script>
+  
+
+  <script src = "js/slidestuff.js"></script>
+  <script src="js/styles.js"></script>
+  <script src="js/layers.js"></script>
+  <script src='js/coyotetemplate.js'></script>
+
+
+  <!--<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-20934186-21', 'cartodb.github.io');
+    ga('send', 'pageview');
+  </script>-->
+
+  <script type="text/javascript" src="http://fast.fonts.net/jsapi/3af16084-ba56-49ca-b37d-0b49b59e1927.js"></script>
+
+<script type="text/template" id="md_template">
+```
+-title: "VOTL"
+-author: "ecotrust"
+```
+
+#Coyote Landmark Areas
+```
+- center: [50.485316, -119.518520]
+- zoom: 7
+```
+
+#Coyote Landmark Areas
+```
+- center: [50.39, -120.39]
+- zoom: 11
+```
+
+[<-Back to Main Map](frontpage.html)
+
+#Coyote Landmark Areas
+```
+- center: [50.46, -119.46]
+- zoom: 11
+```
+
+[<-Back to Main Map](frontpage.html)
+
+#Coyote Landmark Areas
+```
+- center: [50.61, -119.64]
+- zoom: 11
+```
+
+[<-Back to Main Map](frontpage.html)
+
+#Coyote Landmark Areas
+```
+- center: [50.37, -119.28]
+- zoom: 11
+```
+
+[<-Back to Main Map](frontpage.html)
+
+#Coyote Landmark Areas
+```
+- center: [50.4, -118.7]
+- zoom: 11
+```
+
+[<-Back to Main Map](frontpage.html)
+
+#Coyote Landmark Areas
+```
+- center: [50.3, -118.8]
+- zoom: 11
+```
+
+[<-Back to Main Map](frontpage.html)
+
+#Coyote Landmark Areas
+```
+- center: [49.84, -119.36]
+- zoom: 11
+```
+
+[<-Back to Main Map](frontpage.html)
+
+#Coyote Landmark Areas
+```
+- center: [49.42, -119.7]
+- zoom: 12
+```
+
+[<-Back to Main Map](frontpage.html)
+
+#Coyote Landmark Areas
+```
+- center: [49.4, -119.7]
+- zoom: 12
+```
+
+[<-Back to Main Map](frontpage.html)
+
+#Coyote Landmark Areas
+```
+- center: [49.38, -119.61]
+- zoom: 12
+```
+
+[<-Back to Main Map](frontpage.html)
+
+#Coyote Landmark Areas
+```
+- center: [49.35, -119.58]
+- zoom: 12
+```
+
+[<-Back to Main Map](frontpage.html)
+
+#Coyote Landmark Areas
+```
+- center: [49.26, -119.53]
+- zoom: 12
+```
+
+[<-Back to Main Map](frontpage.html)
+
+#Coyote Landmark Areas
+```
+- center: [49.23, -119.98]
+- zoom: 12
+```
+
+[<-Back to Main Map](frontpage.html)
+
+#Coyote Landmark Areas
+```
+- center: [49.233, -119.97]
+- zoom: 12
+```
+
+[<-Back to Main Map](frontpage.html)
+
+#Coyote Landmark Areas
+```
+- center: [49.24, -120.01]
+- zoom: 12
+```
+
+[<-Back to Main Map](frontpage.html)
+
+#Coyote Landmark Areas
+```
+- center: [49.28, -120.03]
+- zoom: 12
+```
+
+[<-Back to Main Map](frontpage.html)
+
+</script></body></html>
