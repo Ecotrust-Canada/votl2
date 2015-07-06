@@ -13,14 +13,24 @@
 		var coyotelayer = L.geoJson(coyote, {onEachFeature: onfeature });
 		
 		//Place Names Layer 
-		var placenameslayer = L.geoJson(placenames, {style: placenameStyle, onEachFeature: AddLabel});	
+		var placenameslayer = L.geoJson(placenames, {style: placenameStyle, onEachFeature: AddLabel});
+
+        //Place Names Layer 
+		var placenameslayerp = L.geoJson(places, {style: placenamepStyle, onEachFeature: AddLabelP});
+        var lakenamelayer = L.geoJson(lakes, {style: placenamepStyle, onEachFeature: AddLabelP});
 		
 		//Reserves Layer	
 		var reserves = L.geoJson(geojsonreserves, {style: style, onEachFeature: rlabels});
 		
 		//markers with video pop up 
 		var markers = L.markerClusterGroup({showCoverageOnHover:false});
-		var JsonLayer = L.geoJson(videos, {onEachFeature: AddPopUp});
+		//var JsonLayer = L.geoJson(videos, {icon:greenIcon, onEachFeature: AddPopUp});
+        var JsonLayer = L.geoJson(videos, {
+            pointToLayer: function(feature, latlng) {
+                
+                return L.marker(latlng, {icon: greenIcon});
+            }
+        ,onEachFeature: AddPopUp});
 		markers.addLayer(JsonLayer);
 		
 		
@@ -50,7 +60,9 @@
 			"Coyote Landmark Areas": coyotes,
 			"Place Names": placenameslayer,
 			"ONA reserve areas": reserves,
-			"Videos": markers
+			"Videos": markers,
+            "place2": placenameslayerp,
+            "lakes": lakenamelayer
 		};
 		var layercontrol = L.control.layers(baseLayers, overlays);
 		

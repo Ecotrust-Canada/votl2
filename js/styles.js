@@ -43,6 +43,21 @@
 			"opacity": 0,
 			"fillOpacity": 0.5
 		};
+        
+        
+        
+        //Place Names Layer2
+		function AddLabelP(feature, layer) {
+			
+			if (feature.properties && feature.properties.Name) {
+				layer.bindLabel('Place Name: <br>' + feature.properties.Name);
+			}
+		}
+		var placenamepStyle = {
+			"color": "#6076B3",
+			"opacity": 0,
+			"fillOpacity": 0.9
+		};
 		
 		//Reserves Layer
 		function style(feature) {
@@ -95,6 +110,14 @@
 			"opacity": 0.6,
 			"fillOpacity": 0
 		};
+        
+        var greenIcon = L.icon({
+            iconUrl: 'MB__video_rec.png',
+
+            iconSize:     [30,30], // size of the icon
+            iconAnchor:   [15, 15], // point of the icon which will correspond to marker's location
+            popupAnchor:  [0,-15] // point from which the popup should open relative to the iconAnchor
+        });
 		
 		//
 		

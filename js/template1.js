@@ -22,6 +22,8 @@ O.Template({
 		reserves.addTo(map).bringToFront();
 		map.addLayer(markers);
 		scale.addTo(map); 
+        placenameslayerp.addTo(map);
+        lakenamelayer.addTo(map);
 		
 
         // enable keys to move

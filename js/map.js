@@ -19,6 +19,8 @@
 		reserves.addTo(map).bringToFront();
 		map.addLayer(markers);
 		scale.addTo(map);
+        placenameslayerp.addTo(map);
+        lakenamelayer.addTo(map);
 		//coyotes.addTo(map);
 		
 		
