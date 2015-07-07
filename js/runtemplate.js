@@ -26,7 +26,7 @@ O.Template({
         //lakenamelayer.addTo(map);
         unitylayer.addTo(map);
 		//coyotes.addTo(map);
-        photo7layer.addTo(map);
+        photolayer.addTo(map);
 		
 
         // enable keys to move

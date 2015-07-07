@@ -21,7 +21,7 @@
         
         
         //unity runs
-        var unitylayer = L.geoJson(unity_runs, {style: unityrunstyle});
+        var unitylayer = L.geoJson(unity_runs, {style: unityrunstyle, onEachFeature:hoverClick});
         
         //photos
         var photolayer = L.geoJson(photopoints, {style: photostyle,

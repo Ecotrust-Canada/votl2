@@ -140,6 +140,42 @@
 			};
 		}
         
+        
+        
+        
+        function highlightFeature(e) {
+			var layer = e.target;
+			layer.setStyle({
+				weight: 7,
+			});
+		}
+		//and reset
+		function resetHighlight(e) {
+			unitylayer.resetStyle(e.target);
+		}
+		
+		
+		//function to add functionality for each feature in provinces layer
+		function hoverClick(feature, layer) {
+			layer.on({
+				mouseover: highlightFeature,
+			});
+			layer.on({
+				mouseout: resetHighlight
+			});
+			layer.on('click', function (e) {
+			window.location = feature.properties.url;
+			});	
+		}
+        
+        
+        
+        
+        
+        
+        
+        
+        
         //photo popups
         function PhotoPopUp(feature, layer) {
 			

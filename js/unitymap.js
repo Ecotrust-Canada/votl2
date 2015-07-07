@@ -2,7 +2,7 @@
 		/*
 		 * Map and Layer Control
 		 */
-		var map = this.map = L.map('map',{layers: [basemap]}).setView([50.485316, -119.518520], 7);
+		var map = this.map = L.map('map',{layers: [basemap]}).setView([49.73, -119.79], 7);
 		
 		
 		/*
@@ -33,7 +33,7 @@
 		var titleslide = L.control();
 		titleslide.onAdd = function (map) {
 
-			var div = L.DomUtil.create('div', 'titleslide');
+			var div = L.DomUtil.create('div', 'titleslide2');
 			div.innerHTML = '<p><font size="30"; color="#363434"><i>Unity Runs</i></font></p><hr><p><font size = "3"; color="#363434">'
 			return div;
 		};

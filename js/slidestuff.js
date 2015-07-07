@@ -1,4 +1,4 @@
-    var resizePID;
+    /*var resizePID;
 
     function clearResize() {
       clearTimeout(resizePID);
@@ -13,7 +13,7 @@
       window.addEventListener("resize", function load(event) {
         clearResize();
       });
-    }
+    }*/
 
     function adjustSlides() {
       var container = document.getElementById("slides_container_run"),
