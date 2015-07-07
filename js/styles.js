@@ -119,7 +119,62 @@
             popupAnchor:  [0,-15] // point from which the popup should open relative to the iconAnchor
         });
 		
-		//
+		//unity runs
+        
+        function getRunColor(x) {
+          return x == 'Year 1'     ?    '#9F170C':
+                 x == 'Year 2'     ?   '#87911E':
+                 x == 'Year 3'     ?   '#E0BF3C':
+                 x == 'Year 4'     ?   '#734DB3':
+                 x == 'Year 5'     ?   '#26A4F1':
+                 x == 'Year 6'     ?   '#031738':
+                 x == 'Year 7'     ?   '#FE5936':
+                                  '#ffffb2' ;
+        };
+        
+        function unityrunstyle(feature) {
+			return {
+				"color": getRunColor(feature.properties.Name),
+                "opacity": 1,
+                "weight": 3,
+			};
+		}
+        
+        //photo popups
+        function PhotoPopUp(feature, layer) {
+			
+			if (feature.properties && feature.properties.image) {
+				layer.bindPopup('<img src="images/' +feature.properties.image + '" width="300px">');
+			}
+			
+		}
+        
+        function photostyle(feature) {
+			return {
+				"fillColor": getRunColor(feature.properties.Name),
+                //"fillColor": '#FE5936',
+                "color": '#282729',
+                "opacity": .5,
+                "fillOpacity": .6,
+                "weight": 3,
+			};
+		}
+        
+        /*var photostyle = {
+			//"color": getRunColor(feature.properties.Name),
+            "fillColor": '#FE5936',
+            "color": '#282729',
+            "opacity": .3,
+            "fillOpacity": .6,
+            "weight": 2,
+		};*/
+                
 		
-		
+        
+        
+        
+        
+        
+        
+        
 		//A comment!

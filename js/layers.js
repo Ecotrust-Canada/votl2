@@ -18,6 +18,18 @@
         //Place Names Layer 
 		var placenameslayerp = L.geoJson(places, {style: placenamepStyle, onEachFeature: AddLabelP});
         var lakenamelayer = L.geoJson(lakes, {style: placenamepStyle, onEachFeature: AddLabelP});
+        
+        
+        //unity runs
+        var unitylayer = L.geoJson(unity_runs, {style: unityrunstyle});
+        
+        //photos
+        var photolayer = L.geoJson(photopoints, {style: photostyle,
+            pointToLayer: function(feature, latlng) {
+                
+                return L.circleMarker(latlng, {radius:5,  });
+            }
+        ,onEachFeature: PhotoPopUp});
 		
 		//Reserves Layer	
 		var reserves = L.geoJson(geojsonreserves, {style: style, onEachFeature: rlabels});
