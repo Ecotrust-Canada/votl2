@@ -33,9 +33,19 @@
 		
 		//Reserves Layer	
 		var reserves = L.geoJson(geojsonreserves, {style: style, onEachFeature: rlabels});
+        reserves.addData(cct);
 		
 		//markers with video pop up 
-		var markers = L.markerClusterGroup({showCoverageOnHover:false});
+        var markers = L.markerClusterGroup({
+            iconCreateFunction: function (cluster) {
+            var childCount = cluster.getChildCount();
+                return new L.DivIcon({ html: '<div><span>' + childCount + '</span></div>', className: 'marker-cluster', iconSize: new L.Point(30, 30) });
+            },         
+        showCoverageOnHover:false});
+        
+        
+        
+		//var markers = L.markerClusterGroup({showCoverageOnHover:false});
 		//var JsonLayer = L.geoJson(videos, {icon:greenIcon, onEachFeature: AddPopUp});
         var JsonLayer = L.geoJson(videos, {
             pointToLayer: function(feature, latlng) {
@@ -81,4 +91,32 @@
 		//Mouse coordinates
 		var mouse = L.control.mousePosition();
 		//Scale Bar
-		var scale = L.control.scale({position: 'bottomright'});
+		//var scale = L.control.scale({position: 'bottomright'});
+        
+        
+        
+        
+        //Back to main map
+        
+        var backbutton = L.control();
+		backbutton.onAdd = function (map) {
+
+			var div = L.DomUtil.create('div', 'backbutton');
+			div.innerHTML = '<a href = frontpage.html>Back to Main Map<a>'
+			return div;
+		};
+        
+        var runbutton = L.control();
+		runbutton.onAdd = function (map) {
+
+			var div = L.DomUtil.create('div', 'backbutton');
+			div.innerHTML = '<a href = unity_runs.html>Run<br>Overview<a>'
+			return div;
+		};
+		
+        
+        
+        
+        
+        
+        

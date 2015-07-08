@@ -21,8 +21,9 @@ O.Template({
 		placenameslayer.addTo(map).bringToFront();
 		reserves.addTo(map).bringToFront();
 		map.addLayer(markers);
-		scale.addTo(map); 
+		
 		coyotes.addTo(map);
+        backbutton.addTo(map);
 		
 
         // enable keys to move

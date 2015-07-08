@@ -548,5 +548,9 @@
 	
 }
 
+.backbutton {
+	float: right; width:60px;height:35px;padding:5px;background-color:white;opacity: 0.9;border-radius: 9px; box-shadow: 2px 2px 2px #888888; 
+}
+
 
 

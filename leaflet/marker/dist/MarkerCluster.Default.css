@@ -1,23 +1,4 @@
-.marker-cluster-small {
-	background-color: #579ED0;
-	}
-.marker-cluster-small div {
-	background-color: #2981CA;
-	}
 
-.marker-cluster-medium {
-	background-color: #579ED0;
-	}
-.marker-cluster-medium div {
-	background-color: #2981CA;
-	}
-
-.marker-cluster-large {
-	background-color: #579ED0;
-	}
-.marker-cluster-large div {
-	background-color: #2981CA;
-	}
 
 	/* IE 6-8 fallback colors */
 .leaflet-oldie .marker-cluster-small {
@@ -42,19 +23,23 @@
 }
 
 .marker-cluster {
+	#background-color: #312C8A;
 	background-clip: padding-box;
-	border-radius: 20px;
+	border-radius: 15px;
 	}
 .marker-cluster div {
-	width: 30px;
-	height: 30px;
+	background-color: #312C8A;
+    opacity: 0.7;
+	width: 20px;
+	height: 20px;
 	margin-left: 5px;
 	margin-top: 5px;
 
 	text-align: center;
-	border-radius: 15px;
-	font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+	border-radius: 10px;
+	font: 8px "Helvetica Neue", Arial, Helvetica, sans-serif;
+    color: #CFD1CD;
 	}
 .marker-cluster span {
-	line-height: 30px;
+	line-height: 20px;
 	}

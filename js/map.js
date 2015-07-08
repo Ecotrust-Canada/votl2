@@ -2,7 +2,7 @@
 		/*
 		 * Map and Layer Control
 		 */
-		var map = this.map = L.map('map',{layers: [basemap]}).setView([50.485316, -119.518520], 7);
+		var map = this.map = L.map('map',{layers: [basemap]}).setView([50.17, -120.8], 7);
 		
 		
 		/*
@@ -18,7 +18,6 @@
 		placenameslayer.addTo(map).bringToFront();
 		reserves.addTo(map).bringToFront();
 		map.addLayer(markers);
-		scale.addTo(map);
         placenameslayerp.addTo(map);
         lakenamelayer.addTo(map);
 		//coyotes.addTo(map);
@@ -32,7 +31,7 @@
 		titleslide.onAdd = function (map) {
 
 			var div = L.DomUtil.create('div', 'titleslide');
-			div.innerHTML = '<p><font size="30"; color="#363434"><i>Voices On The Land</i></font></p><hr><p><font size = "3"; color="#363434">Explore the map by hovering over areas and clicking on markers, or choose a tour below</font></p><br><a href = nationstour.html>Okanagan Member Nations</a><br><a href = coyotetour.html>Coyote Landmark Areas</a><br><a href = lakestour.html>Lakes</a>'
+			div.innerHTML = '<p><font size="30"; color="#363434"><i>Voices On The Land</i></font></p><hr><p><font size = "3"; color="#363434">Explore the map by hovering over areas and clicking on markers, or choose a tour below</font></p><a href= unity_runs.html>Unity Runs</a><br><a href = nationstour.html>Okanagan Member Nations</a><br><a href = coyotetour.html>Coyote Landmark Areas</a><br><a href = lakestour.html>Water Bodies</a>'
 			return div;
 		};
 		titleslide.addTo(map);

@@ -18,12 +18,13 @@
 		//placenameslayer.addTo(map).bringToFront();
 		reserves.addTo(map).bringToFront();
 		//map.addLayer(markers);
-		scale.addTo(map);
+		//scale.addTo(map);
         //placenameslayerp.addTo(map);
         //lakenamelayer.addTo(map);
         unitylayer.addTo(map);
 		//coyotes.addTo(map);
         photolayer.addTo(map);
+        backbutton.addTo(map);
 		
 		
 		

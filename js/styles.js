@@ -48,10 +48,14 @@
         
         //Place Names Layer2
 		function AddLabelP(feature, layer) {
-			
+			var label = "";
 			if (feature.properties && feature.properties.Name) {
-				layer.bindLabel('Place Name: <br>' + feature.properties.Name);
+				label = label.concat('Place Name: <br>' + feature.properties.Name);
 			}
+            if (feature.properties && feature.properties.Nsyilxcen) {
+				label = label.concat('<br>' + feature.properties.Nsyilxcen);
+			}
+            layer.bindLabel(label);
 		}
 		var placenamepStyle = {
 			"color": "#6076B3",
@@ -112,7 +116,7 @@
 		};
         
         var greenIcon = L.icon({
-            iconUrl: 'MB__video_rec.png',
+            iconUrl: 'MB__video_rec2.png',
 
             iconSize:     [30,30], // size of the icon
             iconAnchor:   [15, 15], // point of the icon which will correspond to marker's location
