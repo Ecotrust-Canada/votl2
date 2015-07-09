@@ -16,7 +16,7 @@
     }*/
 
     function adjustSlides() {
-      var container = document.getElementById("slides_container_run"),
+      var container = document.getElementById("slides_container"),
           slide = document.querySelectorAll('.selected_slide')[0];
 
       if (slide) {

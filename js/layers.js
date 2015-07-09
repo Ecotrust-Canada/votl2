@@ -13,11 +13,13 @@
 		var coyotelayer = L.geoJson(coyote, {onEachFeature: onfeature });
 		
 		//Place Names Layer 
-		var placenameslayer = L.geoJson(placenames, {style: placenameStyle, onEachFeature: AddLabel});
+		var placenameslayer = L.geoJson(placenames, {style: placenameStyle, onEachFeature: hoverPlace});
+        placenameslayer.addData(places);
+        placenameslayer.addData(lakes);
 
         //Place Names Layer 
-		var placenameslayerp = L.geoJson(places, {style: placenamepStyle, onEachFeature: AddLabelP});
-        var lakenamelayer = L.geoJson(lakes, {style: placenamepStyle, onEachFeature: AddLabelP});
+		//var placenameslayerp = L.geoJson(places, {style: placenamepStyle, onEachFeature: AddLabelP});
+        //var lakenamelayer = L.geoJson(lakes, {style: placenamepStyle, onEachFeature: AddLabelP});
         
         
         //unity runs
@@ -27,13 +29,13 @@
         var photolayer = L.geoJson(photopoints, {style: photostyle,
             pointToLayer: function(feature, latlng) {
                 
-                return L.circleMarker(latlng, {radius:5,  });
+                return L.circleMarker(latlng, {radius:7,  });
             }
         ,onEachFeature: PhotoPopUp});
 		
 		//Reserves Layer	
 		var reserves = L.geoJson(geojsonreserves, {style: style, onEachFeature: rlabels});
-        reserves.addData(cct);
+        //reserves.addData(cct);
 		
 		//markers with video pop up 
         var markers = L.markerClusterGroup({
@@ -57,13 +59,13 @@
 		
 		
 		//minimap
-		var line2 = L.geoJson(lup, {style: lupStyleinset});
+		/*var line2 = L.geoJson(lup, {style: lupStyleinset});
 		var osm2 = new L.tileLayer(baseurl, {
         attribution: attribution,
         maxZoom: 13
         });
 		var layers = new L.LayerGroup([osm2, line1, line2]);
-		var miniMap = new L.Control.MiniMap(layers, { toggleDisplay: true });
+		var miniMap = new L.Control.MiniMap(layers, { toggleDisplay: true });*/
 		
 		
 		//Boundary Lines
@@ -83,8 +85,6 @@
 			"Place Names": placenameslayer,
 			"ONA reserve areas": reserves,
 			"Videos": markers,
-            "place2": placenameslayerp,
-            "lakes": lakenamelayer
 		};
 		var layercontrol = L.control.layers(baseLayers, overlays);
 		

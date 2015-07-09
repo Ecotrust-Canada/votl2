@@ -10,7 +10,7 @@
 		 */
 		layercontrol.addTo(map);
 		mouse.addTo(map);
-		miniMap.addTo(map);
+		//miniMap.addTo(map);
 		luplabel.addTo(map);
 		onaboundary.addTo(map);
 		boundarylabel.addTo(map);
@@ -18,8 +18,8 @@
 		placenameslayer.addTo(map).bringToFront();
 		reserves.addTo(map).bringToFront();
 		map.addLayer(markers);
-        placenameslayerp.addTo(map);
-        lakenamelayer.addTo(map);
+        //placenameslayerp.addTo(map);
+        //lakenamelayer.addTo(map);
 		//coyotes.addTo(map);
 		
 		
@@ -31,7 +31,7 @@
 		titleslide.onAdd = function (map) {
 
 			var div = L.DomUtil.create('div', 'titleslide');
-			div.innerHTML = '<p><font size="30"; color="#363434"><i>Voices On The Land</i></font></p><hr><p><font size = "3"; color="#363434">Explore the map by hovering over areas and clicking on markers, or choose a tour below</font></p><a href= unity_runs.html>Unity Runs</a><br><a href = nationstour.html>Okanagan Member Nations</a><br><a href = coyotetour.html>Coyote Landmark Areas</a><br><a href = lakestour.html>Water Bodies</a>'
+			div.innerHTML = '<p><font size="30"; color="#363434"><i>Voices On The Land</i></font></p><hr><p><font size = "3"; color="#363434">Explore the map by hovering over areas and clicking on markers, or choose a tour below</font></p><a href= unity_runs.html>Unity Runs</a><br><a href = nationstour.html>Okanagan Member Communities</a><br><a href = coyotetour.html>Coyote Landmark Areas</a><br><a href = lakestour.html>Water Bodies</a>'
 			return div;
 		};
 		titleslide.addTo(map);

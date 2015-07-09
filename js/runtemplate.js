@@ -13,7 +13,7 @@ O.Template({
 		 */
 		layercontrol.addTo(map);
 		mouse.addTo(map);
-		miniMap.addTo(map);
+		//miniMap.addTo(map);
 		//luplabel.addTo(map);
 		onaboundary.addTo(map);
 		boundarylabel.addTo(map);

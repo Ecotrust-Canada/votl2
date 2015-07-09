@@ -1,0 +1,29 @@
+.leaflet-cluster-anim .leaflet-marker-icon, .leaflet-cluster-anim .leaflet-marker-shadow {
+	-webkit-transition: -webkit-transform 0.3s ease-out, opacity 0.3s ease-in;
+	-moz-transition: -moz-transform 0.3s ease-out, opacity 0.3s ease-in;
+	-o-transition: -o-transform 0.3s ease-out, opacity 0.3s ease-in;
+	transition: transform 0.3s ease-out, opacity 0.3s ease-in;
+	}
+    
+    
+.marker-cluster {
+	#background-color: #312C8A;
+	background-clip: padding-box;
+	border-radius: 15px;
+	}
+.marker-cluster div {
+	background-color: #312C8A;
+    opacity: 0.7;
+	width: 20px;
+	height: 20px;
+	margin-left: 5px;
+	margin-top: 5px;
+
+	text-align: center;
+	border-radius: 10px;
+	font: 8px "Helvetica Neue", Arial, Helvetica, sans-serif;
+    color: #CFD1CD;
+	}
+.marker-cluster span {
+	line-height: 20px;
+	}

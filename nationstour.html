@@ -6,52 +6,39 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/x-icon" href="odyssey/sandbox/favicon.png">
   <link rel="icon" type="image/png" href="http://voicesontheland.org/projects/ce_atlas/group_images/Okanagan_Nation_Alliance949_3.jpg">
 
   <!--Odyssey and Leaflet Links-->
   <link rel="stylesheet" href="http://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/themes/css/cartodb.css">
   <link rel="stylesheet" href="odyssey/sandbox/css/slides.css">
   <script src="odyssey/vendor/modernizr-2.6.2.min.js"></script>
-  <link rel="stylesheet" href="leaflet/leaflet.css" />
-	<link rel="stylesheet" href="leaflet/label/dist/leaflet.label.css" />
+ 
+
+ <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+	<link rel="stylesheet" href="leaflet/leaflet.css" />
 	<script src="leaflet/leaflet.js"></script>
 
-	<script src="leaflet/label/src/Label.js"></script>
-	<script src="leaflet/label/src/BaseMarkerMethods.js"></script>
-	<script src="leaflet/label/src/Marker.Label.js"></script>
-	<script src="leaflet/label/src/CircleMarker.Label.js"></script>
-	<script src="leaflet/label/src/Path.Label.js"></script>
-	<script src="leaflet/label/src/Map.Label.js"></script>
-	<script src="leaflet/label/src/FeatureGroup.Label.js"></script>
-	
-	<link rel="stylesheet" href="leaflet/marker/dist/MarkerCluster.css" />
-    <link rel="stylesheet" href="leaflet/marker/dist/MarkerCluster.Default.css" />
-    <script src="leaflet/marker/dist/leaflet.markercluster-src.js"></script>
-  
-  
-    <link rel="stylesheet" href="leaflet/minimap/src/Control.MiniMap.css" />
-    <script src="leaflet/minimap/src/Control.MiniMap.js"></script>
+    <script src="leaflet/label/leaflet.label.js"></script>
+	<link rel="stylesheet" href="leaflet/label/leaflet.label.css" />
+    
+	<link rel="stylesheet" href="leaflet/marker/MarkerCluster.css" />
+    <script src="leaflet/marker/leaflet.markercluster.js"></script>
   
     <link rel="stylesheet" href="leaflet/mouseposition/src/L.Control.MousePosition.css" />
     <script src="leaflet/mouseposition/src/L.Control.MousePosition.js"></script>
-	
-	<script type="text/javascript" src="jquery.js"></script>
 	
 	<!--Links to php scripts which convert postgres data to geojson-->  
     <script src="http://voicesontheland.org/media/alex2.php"></script><!--Converts media table with videos to geojsonpoint-->
     <!--Options: geotable - table name, fields - fields to include, varname  - javascript variable name-->
     <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=ona_boundary_line&fields=left_fid&varname=boundaryline"></script>
     <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=ona_landuseplan_boundary&fields=id&varname=lup"></script>
-    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=ona_ir&fields=nglshnm&varname=geojsonreserves"></script>
-    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=place_name_areas_new_4326&fields=name&varname=placenames"></script>
-	<script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=coyote_landmark_areas&fields=label&varname=coyote"></script>
-    <script src="js/places.js"></script>
-    <script src="js/lakes.js"></script>
-    <script src="js/unity_runs.js"></script>
-    <script src="js/photo7.js"></script>
-    <script src="js/photopoints.js"></script>
-    <script src="js/cct.js"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=reserves&fields=nglshnm&varname=geojsonreserves"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=place_name_areas_new_4326&fields=nsyilxcen&varname=placenames"></script>
+	<script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=coyote_lm&fields=label&varname=coyote"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=places&fields=Name,Nsyilxcen,Additional&varname=places"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=lakes&fields=Name,Nsyilxcen,Additional&varname=lakes"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=unity_runs&fields=Name,url&varname=unity_runs"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=photopoints&fields=name,image&varname=photopoints"></script>
   
   
 </head>
@@ -94,7 +81,6 @@
     ga('send', 'pageview');
   </script>-->
 
-  <script type="text/javascript" src="http://fast.fonts.net/jsapi/3af16084-ba56-49ca-b37d-0b49b59e1927.js"></script>
 
 <script type="text/template" id="md_template">
 ```
@@ -118,9 +104,9 @@ Welcome to the Okanagan Nation Alliance.  Click on the arrows at the bottom of t
 
 Chief: Harvey McLeod
 
-8 reserves throughout a landbase of 1600 hectares
+Comprised of 8 reserves throughout the land base of 1600 hectares. To learn more about the Upper Nicola Indian Band, please visit the website provided: 
 
-website: www.uppernicolaband.com
+[www.uppernicolaband.com](www.uppernicolaband.com)
 
 #Okanagan Indian Band
 ```
@@ -131,13 +117,9 @@ website: www.uppernicolaband.com
 
 Chief: Bryon Louis
 
-The Okanagan Valley is known as the Syeelhwh Nation
+The Okanagan Indian Band is located at the head of the Okanagan Lake which consists of six reserves.  1800’s was the time of Okanagan Ancestors first encounter with European fur traders. To learn more about the Okanagan Indian Band, please visit the website provided:
 
-6 reserves located at the head of the Okananagan Lake
-
-1800's was the time of Okanagan Ancestors' first encounter with European fur traders
-
-website: www.okib.ca
+[www.okib.com](www.okib.com)
 
 #Westbank First Nation
 ```
@@ -149,13 +131,9 @@ website: www.okib.ca
 
 Chief: Robert Louie
 
-Consists of 5 reserves
+In 1963 Westbank First Nation was officially an independent band. It consists of 5 reserves. In 2005, WFN achieved the Westbank First Nation Self-Government Act. To learn more about Westbank First Nation, please visit the website provided: 
 
-In 1963 Westbank First Nation was officially an independant band
-
-In 2005, WFN achieved the Westbank First Nation Self-Government Act
-
-website: www.wfn.ca
+[www.wfn.ca](www.wfn.ca)
 
 #Penticton Indian Band
 ```
@@ -167,11 +145,9 @@ website: www.wfn.ca
 
 Chief: Jonathan Kruger
 
-Consists of 3 reserves that create the largest land base of the member bands
+The Penticton Indian Band consists of 3 reserves that create the largest land base of the Okanagan Nation member communities. The land base is 19,436 hectares. To learn more about Penticton Indian Band, Please visit the website provided:
 
-The land base is 19,436 hectares
-
-website: www.pib.ca
+[www.pib.ca](www.pib.ca)
 
 
 #Osoyoos Indian Band
@@ -184,9 +160,9 @@ website: www.pib.ca
 
 Chief: Clarence Louie
 
-Placed between Oliver and Osoyoos, with a land base of 13,045 hectares
+Placed between Oliver and Osoyoos, with a land base of 13,045 hectares. To learn more about the Osoyoos Indian Band, please visit the website provided:
 
-website: www.oib.ca
+[www.oib.ca](www.oib.ca)
 
 
 #Lower Similkameen Indian Band
@@ -198,14 +174,9 @@ website: www.oib.ca
 
 Chief: Keith Crow
 
-Located in the Similkameen Valley in the South Okanagan
+The Lower Similkameen Indian Band is located in the Similkameen Valley  in the South Okanagan. It is divided into 11 reserves with a land base of 15,276.4 hectares. To learn more about the Lower Similkameen Indian Band, please visit the website provided:
 
-Divided into 11 reserves with a land base of 15,276.4 hectares
-
-Initially the Similkameen people were nomadic; moving from one place to the next
-
-website: www.lsib.net
-
+[www.lsib.net](www.lsib.net)
 
 
 #Upper Similkameen Indian Band
@@ -217,9 +188,7 @@ website: www.lsib.net
 
 Chief: Charlotte Mitchell
 
-Consists of 7 reserves with a land base of 2,708.5 hectares
-
-Has smallest population of member bands
+The Upper Similkameen Indian Band comprises of 7 reserves with a land base of 2,708.5 hectares. Of the Okanagan Nation member communities it obtains the smallest population.  For more information please contact USIB Band office.
 
 #Confederated Tribes of the Colville
 ```
@@ -228,13 +197,9 @@ Has smallest population of member bands
 ```
 ![CCT](images/cct_logo.gif)
 
-The Colville Land Base is 2100 square kilometers
+The Colville Reservation is known as an American Indian Tribe. The Colville Confederated Tribes Reservation land base is 2100 sq. kilometers. This Reservation was established in 1872, it formerly occupied twice the size of land. To learn more about the Colville Conferedated Tribes, please visit the website provided:
 
-The Colville Reservation is known as an American Indian Tribe
-
-The Reservation was established in 1872, it formerly occupied twice the size of land.
-
-website: www.colvilletribes.com
+[www.colvilletribes.com](www.colvilletribes.com)
 
 
 

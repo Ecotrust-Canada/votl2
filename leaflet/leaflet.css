@@ -338,7 +338,7 @@
 .leaflet-container .leaflet-control-attribution,
 .leaflet-container .leaflet-control-scale {
 	font-size: 11px;
-	padding: 10px 20px;
+	padding: 2px;
 	}
 .leaflet-left .leaflet-control-scale {
 	margin-left: 5px;
@@ -390,7 +390,7 @@
 .leaflet-popup-content-wrapper {
 	padding: 1px;
 	text-align: left;
-	border-radius: 12px;
+	border-radius: 10px;
 	}
 .leaflet-popup-content {
 	margin: 5px 5px;

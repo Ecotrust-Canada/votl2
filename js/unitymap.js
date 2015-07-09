@@ -10,7 +10,7 @@
 		 */
 		layercontrol.addTo(map);
 		mouse.addTo(map);
-		miniMap.addTo(map);
+		//miniMap.addTo(map);
 		//luplabel.addTo(map);
 		onaboundary.addTo(map);
 		//boundarylabel.addTo(map);
@@ -21,10 +21,12 @@
 		//scale.addTo(map);
         //placenameslayerp.addTo(map);
         //lakenamelayer.addTo(map);
+        //year1.addTo(map);
         unitylayer.addTo(map);
 		//coyotes.addTo(map);
         photolayer.addTo(map);
         backbutton.addTo(map);
+        
 		
 		
 		

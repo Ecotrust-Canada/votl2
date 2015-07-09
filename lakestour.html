@@ -6,53 +6,39 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/x-icon" href="odyssey/sandbox/favicon.png">
   <link rel="icon" type="image/png" href="http://voicesontheland.org/projects/ce_atlas/group_images/Okanagan_Nation_Alliance949_3.jpg">
 
   <!--Odyssey and Leaflet Links-->
   <link rel="stylesheet" href="http://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/themes/css/cartodb.css">
   <link rel="stylesheet" href="odyssey/sandbox/css/slides.css">
   <script src="odyssey/vendor/modernizr-2.6.2.min.js"></script>
-  <link rel="stylesheet" href="leaflet/leaflet.css" />
-	<link rel="stylesheet" href="leaflet/label/dist/leaflet.label.css" />
+  
+  
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+	<link rel="stylesheet" href="leaflet/leaflet.css" />
 	<script src="leaflet/leaflet.js"></script>
-	<script src="leaflet/leaflet-src.js"></script>
 
-	<script src="leaflet/label/src/Label.js"></script>
-	<script src="leaflet/label/src/BaseMarkerMethods.js"></script>
-	<script src="leaflet/label/src/Marker.Label.js"></script>
-	<script src="leaflet/label/src/CircleMarker.Label.js"></script>
-	<script src="leaflet/label/src/Path.Label.js"></script>
-	<script src="leaflet/label/src/Map.Label.js"></script>
-	<script src="leaflet/label/src/FeatureGroup.Label.js"></script>
-	
-	<link rel="stylesheet" href="leaflet/marker/dist/MarkerCluster.css" />
-    <link rel="stylesheet" href="leaflet/marker/dist/MarkerCluster.Default.css" />
-    <script src="leaflet/marker/dist/leaflet.markercluster-src.js"></script>
-  
-  
-    <link rel="stylesheet" href="leaflet/minimap/src/Control.MiniMap.css" />
-    <script src="leaflet/minimap/src/Control.MiniMap.js"></script>
+    <script src="leaflet/label/leaflet.label.js"></script>
+	<link rel="stylesheet" href="leaflet/label/leaflet.label.css" />
+    
+	<link rel="stylesheet" href="leaflet/marker/MarkerCluster.css" />
+    <script src="leaflet/marker/leaflet.markercluster.js"></script>
   
     <link rel="stylesheet" href="leaflet/mouseposition/src/L.Control.MousePosition.css" />
     <script src="leaflet/mouseposition/src/L.Control.MousePosition.js"></script>
-	
-	<script type="text/javascript" src="jquery.js"></script>
 	
 	<!--Links to php scripts which convert postgres data to geojson-->  
     <script src="http://voicesontheland.org/media/alex2.php"></script><!--Converts media table with videos to geojsonpoint-->
     <!--Options: geotable - table name, fields - fields to include, varname  - javascript variable name-->
     <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=ona_boundary_line&fields=left_fid&varname=boundaryline"></script>
     <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=ona_landuseplan_boundary&fields=id&varname=lup"></script>
-    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=ona_ir&fields=nglshnm&varname=geojsonreserves"></script>
-    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=place_name_areas_new_4326&fields=name&varname=placenames"></script>
-	<script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=coyote_landmark_areas&fields=label&varname=coyote"></script>
-    <script src="js/places.js"></script>
-    <script src="js/lakes.js"></script>
-    <script src="js/unity_runs.js"></script>
-    <script src="js/photo7.js"></script>
-    <script src="js/photopoints.js"></script>
-    <script src="js/cct.js"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=reserves&fields=nglshnm&varname=geojsonreserves"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=place_name_areas_new_4326&fields=nsyilxcen&varname=placenames"></script>
+	<script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=coyote_lm&fields=label&varname=coyote"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=places&fields=Name,Nsyilxcen,Additional&varname=places"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=lakes&fields=Name,Nsyilxcen,Additional&varname=lakes"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=unity_runs&fields=Name,url&varname=unity_runs"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=photopoints&fields=name,image&varname=photopoints"></script>
   
   
 </head>
@@ -76,7 +62,6 @@
   </span></span></div>
 
   <!--More Odyssey, and Leaflet Plugins-->
-  <script src="http://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/cartodb.js"></script>
   <script src="odyssey/dist/odyssey.js" charset="UTF-8"></script>
   
 
@@ -103,55 +88,57 @@
 -author: "ecotrust"
 ```
 
-#Lakes
+#Water Bodies
 ```
-- center: [50.485316, -119.518520]
+- center: [50.2, -121.1]
 - zoom: 7
 ```
 
-#Columbia River
+Welcome to the Water Bodies Tour
+
+#nƛ̓qmitkw • Columbia River 
 ```
-- center: [48.271308, -118.150819]
+- center: [48.3, -118.9]
 - zoom: 9
 ```
 
-#Kettle River
+#snx̌wyaɬpítkw • Kettle River
 ```
 - center: [49.064313, -118.972485]
 - zoom: 10
 ```
 
-#Similkameen River
+#nməlqaytkw • Similkameen River
 ```
-- center: [49.116578, -119.760404]
-- zoom: 13
+- center: [49.2, -120.1]
+- zoom: 10
 ```
 
-#Mission Creek
+#nx̌waqwaʔstn • Mission Creek
 ```
 - center: [49.875721, -119.408244]
 - zoom: 13
 ```
 
-#Granby River
+#snxwyntqwítk • Granby River
 ```
 - center: [49.288441, -118.464912]
 - zoom: 13
 ```
 
-#Okanagan Lake
+#kɬúsx̌nítkw • Okanagan Lake
 ```
 - center: [49.86, -119.59]
 - zoom: 13
 ```
 
-#Arrow Lakes
+#t’íkw’t • Arrow Lakes
 ```
 - center: [50.432681, -117.925860]
 - zoom: 13
 ```
 
-#Spotted Lake
+#kɬlílxw • Spotted Lake
 ```
 - center: [49.077988, -119.566741]
 - zoom: 13
@@ -163,13 +150,13 @@
 - zoom: 13
 ```
 
-#Douglas Lake
+#spaxmən • Douglas Lake
 ```
 - center: [35.992996, -83.369249]
 - zoom: 13
 ```
 
-#Osoyoos Lake
+#nk’mip • Osoyoos Lake
 ```
 - center: [49.02, -119.45]
 - zoom: 15

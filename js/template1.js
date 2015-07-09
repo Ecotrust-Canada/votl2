@@ -13,7 +13,7 @@ O.Template({
 		 */
 		layercontrol.addTo(map);
 		mouse.addTo(map);
-		miniMap.addTo(map);
+		//miniMap.addTo(map);
 		luplabel.addTo(map);
 		onaboundary.addTo(map);
 		boundarylabel.addTo(map);
@@ -21,8 +21,8 @@ O.Template({
 		placenameslayer.addTo(map).bringToFront();
 		reserves.addTo(map).bringToFront();
 		map.addLayer(markers);
-        placenameslayerp.addTo(map);
-        lakenamelayer.addTo(map);
+        //placenameslayerp.addTo(map);
+        //lakenamelayer.addTo(map);
         backbutton.addTo(map);
 		
 

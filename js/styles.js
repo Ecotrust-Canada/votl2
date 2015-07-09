@@ -32,36 +32,46 @@
 		}
 		
 		//Place Names Layer
-		function AddLabel(feature, layer) {
-			
-			if (feature.properties && feature.properties.name) {
-				layer.bindLabel('Place Name: <br>' + feature.properties.name);
-			}
+        
+        function highlightPlace(e) {
+			var layer = e.target;
+			layer.setStyle({
+				"color": "#6076B3",
+                "opacity": 0,
+                "fillOpacity": 0.5,
+			});
 		}
-		var placenameStyle = {
-			"color": "#6076B3",
-			"opacity": 0,
-			"fillOpacity": 0.5
-		};
-        
-        
-        
-        //Place Names Layer2
-		function AddLabelP(feature, layer) {
-			var label = "";
-			if (feature.properties && feature.properties.Name) {
-				label = label.concat('Place Name: <br>' + feature.properties.Name);
+		//and reset
+		function resetPlace(e) {
+			placenameslayer.resetStyle(e.target);
+		}
+		
+		
+		//function to add functionality for each feature in layer
+		function hoverPlace(feature, layer) {
+			layer.on({
+				mouseover: highlightPlace,
+			});
+			layer.on({
+				mouseout: resetPlace
+			});
+            
+            var label = "";
+            if (feature.properties && feature.properties.nsyilxcen) {
+				label = label.concat(feature.properties.nsyilxcen);
 			}
-            if (feature.properties && feature.properties.Nsyilxcen) {
-				label = label.concat('<br>' + feature.properties.Nsyilxcen);
+			if (feature.properties && feature.properties.name) {
+				label = label.concat('<br>' + feature.properties.name);
 			}
             layer.bindLabel(label);
 		}
-		var placenamepStyle = {
+        
+		var placenameStyle = {
 			"color": "#6076B3",
 			"opacity": 0,
-			"fillOpacity": 0.9
+			"fillOpacity": 0
 		};
+        
 		
 		//Reserves Layer
 		function style(feature) {
@@ -116,7 +126,7 @@
 		};
         
         var greenIcon = L.icon({
-            iconUrl: 'MB__video_rec2.png',
+            iconUrl: 'images/MB__video_rec2.png',
 
             iconSize:     [30,30], // size of the icon
             iconAnchor:   [15, 15], // point of the icon which will correspond to marker's location
@@ -135,31 +145,32 @@
                  x == 'Year 7'     ?   '#FE5936':
                                   '#ffffb2' ;
         };
+
         
         function unityrunstyle(feature) {
 			return {
-				"color": getRunColor(feature.properties.Name),
-                "opacity": 1,
-                "weight": 3,
+				"color": getRunColor(feature.properties.name),
+                "opacity": .7,
+                "weight": 5,//getweight(feature.properties.Name),
 			};
 		}
-        
-        
-        
         
         function highlightFeature(e) {
 			var layer = e.target;
 			layer.setStyle({
 				weight: 7,
+                opacity: 1,
 			});
+            layer.bringToFront();
 		}
 		//and reset
 		function resetHighlight(e) {
 			unitylayer.resetStyle(e.target);
+            photolayer.bringToFront();
 		}
 		
 		
-		//function to add functionality for each feature in provinces layer
+		//function to add functionality for each feature in layer
 		function hoverClick(feature, layer) {
 			layer.on({
 				mouseover: highlightFeature,
@@ -184,30 +195,21 @@
         function PhotoPopUp(feature, layer) {
 			
 			if (feature.properties && feature.properties.image) {
-				layer.bindPopup('<img src="images/' +feature.properties.image + '" width="300px">');
+				layer.bindPopup('<img src="images/' +feature.properties.image + '" width="400px">', {maxWidth:400});
 			}
 			
 		}
         
         function photostyle(feature) {
 			return {
-				"fillColor": getRunColor(feature.properties.Name),
-                //"fillColor": '#FE5936',
+				"fillColor": getRunColor(feature.properties.name),
                 "color": '#282729',
                 "opacity": .5,
                 "fillOpacity": .6,
                 "weight": 3,
 			};
 		}
-        
-        /*var photostyle = {
-			//"color": getRunColor(feature.properties.Name),
-            "fillColor": '#FE5936',
-            "color": '#282729',
-            "opacity": .3,
-            "fillOpacity": .6,
-            "weight": 2,
-		};*/
+       
                 
 		
         
