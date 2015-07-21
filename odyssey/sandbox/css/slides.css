@@ -3,7 +3,7 @@
 #map{position:absolute;top:0;left:0;width:100%;height:100%}
 
 
-#slides_container{display:none;position:absolute;top:30px;left:40px;width:30%;max-width:300px; padding:10px;background-color:#F5F9FC;opacity: 0.9;box-shadow: 5px 5px 5px #5E5E5E;z-index:10}
+#slides_container{display:none;position:absolute;top:30px;left:40px;width:50%;max-width:500px; padding:10px;background-color:#F5F9FC;opacity: 0.9;box-shadow: 5px 5px 5px #5E5E5E;z-index:10}
 #slides_container.visible{margin:bottom:40px; display:block !important }
 #slides_container .slide{display:none;overflow-y:auto;padding-right:20px;}
 #slides_container .slide.selected{margin:bottom:40px; display:block !important}
@@ -16,6 +16,7 @@
 #slides_container span{font-family:AleoRegular, Serif;color:#333;font-size:25px;margin:0 0 5px 0}
 #slides_container a{color:#2D7790;text-decoration:underline; font-size: 16px;}
 #slides_container a:hover{color:#25242e;}
+#slides_container a{target="_blank"}
 #slides_container img{margin:5px 0;max-width:100%}
 #slides_container p {margin-bottom:12px;}
 #slides_container h2 {margin-bottom:2px;font-family: Arial, sans-s;}
