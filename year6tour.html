@@ -42,7 +42,7 @@
     <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=place_name_areas_new_4326&fields=nsyilxcen&varname=placenames"></script>
 	<script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=coyote_lm&fields=label&varname=coyote"></script>
     <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=places&fields=Name,Nsyilxcen,Additional&varname=places"></script>
-    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=lakes&fields=Name,Nsyilxcen,Additional&varname=lakes"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=lakes&fields=Name,Nsyilxcen,Additional&varname=lakes&orderby=gid"></script>
     <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=unity_runs&fields=Name,url&varname=unity_runs"></script>
     <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=photopoints&fields=name,image&varname=photopoints"></script>
   
@@ -52,14 +52,26 @@
   <div id="map" style="width: 100%; height: 100%;"></div>
 
   <div id="slides_container" style="display:block;">
-    <div id="dots"></div>
+    <div id = "wrapper" style="position:relative; margin-bottom:35px; height:100%; width:100%;">
+        <div id = "corner" style="float:right">
+            <a id="smaller" href='#' style="margin-top:30px;display:none;" onclick="Shrink();"><< Smaller</a>
+            <a id= "expand" href='#' style="margin-top:30px;" onclick="Expand();">Expand >></a>
+        </div>
+        <div id="dots"></div>
+    
 
-    <div id="slides"></div>
+
+        <div id="slides" style="margin-bottom:40px;"></div>
+    </div>
 
     <ul id="navButtons">
-      <li><a class="prev"></a></li>
-      <li><a class="next"></a></li>
+    <div id="run-button" style="position:relative;"><div style="position:absolute;bottom:4px;right:0;"><a href="unity_runs.html"><center>Run Overview</center></a></div></div>
+      <div id="home-button"><a href="frontpage.html"><center><img src="images/home_icon.svg" ></center></a></div>
+      <div id= "back"><li><a class="prev" style="margin-right:50px;"><center><img style="margin-left:7px"src="odyssey/sandbox/img/back.png" height="26px" ></center></a></li></div>
+      <div id= "forward"><li><a class="next" ><center><img style="margin-left:22px" src="odyssey/sandbox/img/forward.png" height="26px" ></center></a></li></div>
+      
     </ul>
+    
   </div>
 
   <div id="credits">
@@ -101,7 +113,7 @@
 ```
 ![LSIB](images/year6_1.jpg)
 
-Morning prayer at Sensisyusten, Westbank, BC
+Morning prayer at sənsisyustən House of Learning , stqaɁtkwəłniwt - Tsinstikeptum 9, Westbank First Nation  
 
 #2014
 ```
@@ -110,7 +122,7 @@ Morning prayer at Sensisyusten, Westbank, BC
 ```
 ![LSIB](images/year6_2.jpg)
 
-Running through Peachland, BC 
+Running through k’əłpəlmapqən - Peachland, BC 
 
 #2014
 ```
@@ -119,7 +131,7 @@ Running through Peachland, BC
 ```
 ![LSIB](images/year6_3.jpg)
 
-Running to Summerland, BC
+Running to to k’łchink - Summerland, BC
 
 #2014
 ```
@@ -128,7 +140,7 @@ Running to Summerland, BC
 ```
 ![LSIB](images/year6_4.jpg)
 
-Waiting to Run 
+Waiting to Run along q’awst’ik’wt – Skaha Lake 
 
 #2014
 ```
@@ -137,7 +149,7 @@ Waiting to Run
 ```
 ![LSIB](images/year6_5.jpg)
 
-Running past Skaha Bluffs 
+Running past nʕaylintən - McIntyre Bluff 
 
 #2014
 ```
@@ -146,7 +158,7 @@ Running past Skaha Bluffs
 ```
 ![LSIB](images/year6_6.jpg)
 
-Running through mountains over to Keremeos, BC 
+Running over through txesqin – Mount Kobau to Blind Creek
 
 #2014
 ```

@@ -36,7 +36,7 @@
     <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=place_name_areas_new_4326&fields=nsyilxcen&varname=placenames"></script>
 	<script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=coyote_lm&fields=label&varname=coyote"></script>
     <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=places&fields=Name,Nsyilxcen,Additional&varname=places"></script>
-    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=lakes&fields=Name,Nsyilxcen,Additional&varname=lakes"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=lakes&fields=Name,Nsyilxcen,Additional&varname=lakes&orderby=gid"></script>
     <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=unity_runs&fields=Name,url&varname=unity_runs"></script>
     <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=photopoints&fields=name,image&varname=photopoints"></script>
   
@@ -46,14 +46,25 @@
   <div id="map" style="width: 100%; height: 100%;"></div>
 
   <div id="slides_container" style="display:block;">
-    <div id="dots"></div>
+    <div id = "wrapper" style="position:relative; margin-bottom:35px; height:100%; width:100%;">
+        <div id = "corner" style="float:right">
+            <a id="smaller" href='#' style="margin-top:30px;display:none;" onclick="Shrink();"><< Smaller</a>
+            <a id= "expand" href='#' style="margin-top:30px;" onclick="Expand();">Expand >></a>
+        </div>
+        <div id="dots"></div>
+    
 
-    <div id="slides"></div>
+
+        <div id="slides" style="margin-bottom:40px;"></div>
+    </div>
 
     <ul id="navButtons">
-      <li><a class="prev"></a></li>
-      <li><a class="next"></a></li>
+      <div id="home-button"><a href="frontpage.html"><center><img src="images/home_icon.svg" ></center></a></div>
+      <div id= "back"><li><a class="prev" style="margin-right:50px;"><center><img style="margin-left:7px"src="odyssey/sandbox/img/back.png" height="26px" ></center></a></li></div>
+      <div id= "forward"><li><a class="next" ><center><img style="margin-left:22px" src="odyssey/sandbox/img/forward.png" height="26px" ></center></a></li></div>
+      
     </ul>
+    
   </div>
 
   <div id="credits">
@@ -93,47 +104,73 @@
 - center: [50.1, -120.9]
 - zoom: 7
 ```
-Welcome to the Okanagan Nation Alliance.  Click on the arrows at the bottom of this box to view the bands which make up the alliance.
+### Welcome to the Okanagan Nation territory. Explore the member communities that make up the Okanagan Nation.
+
+## Okanagan Nation alliance
+## #101, 3535 Old Okanagan Hwy
+## Westbank, BC
+## V4T 3L7
+## T: 250-707-009 
+[www.syilx.org](www.syilx.org)
 
 # Upper Nicola Band
 ```
-- center: [50.141730, -120.785737]
-- zoom: 10
+- center: [50.1, -120.4]
+- zoom: 11
 ```
-![UNB](images/unib_logo.gif)
+
+![drawing](images/uppernicola_logo.png)
 
 Chief: Harvey McLeod
 
-Comprised of 8 reserves throughout the land base of 1600 hectares. To learn more about the Upper Nicola Indian Band, please visit the website provided: 
+Comprised of 8 reserves throughout the land base of 1600 hectares  
 
 [www.uppernicolaband.com](www.uppernicolaband.com)
+
+## PO Box 3700
+## Merritt, BC V1K 1B8
+## T: 250 - 350 - 3342
+## F: 250 - 350 - 3311 
+
 
 #Okanagan Indian Band
 ```
 - center: [50.356162, -119.519863]
-- zoom: 10
+- zoom: 11
 ```
-![OKIB](images/okib_logo.png)
+![drawing](images/okanagan_logo.png)
 
 Chief: Bryon Louis
 
-The Okanagan Indian Band is located at the head of the Okanagan Lake which consists of six reserves.  1800’s was the time of Okanagan Ancestors first encounter with European fur traders. To learn more about the Okanagan Indian Band, please visit the website provided:
+The Okanagan Indian Band is located at the head of the Okanagan Lake which consists of six reserves.  1800’s was the time of Okanagan Ancestors first encounter with European fur traders.
 
 [www.okib.com](www.okib.com)
+
+## 12420 Westside Road
+## Vernon, BC V1H 2A4
+## T: 250 - 542 - 4328 or Toll-free: 1 - 866 - 542 - 4328
+## F: 250 - 542 - 4990 
+
 
 #Westbank First Nation
 ```
 - center: [49.882108, -119.534552]
-- zoom: 10
+- zoom: 11
 ```
 
-![WFN](images/wfn_logo.png)
+![drawing](images/wfn_logo_new.png)
 
 Chief: Robert Louie
 
-In 1963 Westbank First Nation was officially an independent band. It consists of 5 reserves. In 2005, WFN achieved the Westbank First Nation Self-Government Act. To learn more about Westbank First Nation, please visit the website provided: 
+Westbank First Nation consists of 5 reserves. The two populated reserves, Tsinstikeptum Reserves 9 and 10, border Okanagan Lake and are in close proximity to the City of West Kelowna, one of the fastest growing cities in British Columbia.
 
 [www.wfn.ca](www.wfn.ca)
+
+## 301-515 Hwy 97 South
+## Kelowna, BC V1Z 3J2
+## T: 250 - 769 - 4999
+## F: 250 - 769 - 2443 
+
 
 #Penticton Indian Band
 ```
@@ -141,28 +178,40 @@ In 1963 Westbank First Nation was officially an independent band. It consists of
 - zoom: 11
 ```
 
-![PIB](images/pib_logo.png)
+![drawing](images/pib_logo_new.png)
 
 Chief: Jonathan Kruger
 
-The Penticton Indian Band consists of 3 reserves that create the largest land base of the Okanagan Nation member communities. The land base is 19,436 hectares. To learn more about Penticton Indian Band, Please visit the website provided:
+The Penticton Indian Band consists of 3 reserves that create the largest land base of the Okanagan Nation member communities. The land base is 19,436 hectares.
 
 [www.pib.ca](www.pib.ca)
+
+## 200 Westhills Drive RR#2 Site 80 Comp 19
+## Penticton, BC V2A 6J7
+## T: 250 - 493 - 0048 or Toll free: 1 - 877 - 493 - 0048
+## F: 250 - 493 - 2882
+
 
 
 #Osoyoos Indian Band
 ```
-- center: [49.1, -119.6]
+- center: [49.1, -119.5]
 - zoom: 11
 ```
 
-![OIB](images/oib_logo.png)
+![drawing](images/osoyoos_logo.png)
 
 Chief: Clarence Louie
 
-Placed between Oliver and Osoyoos, with a land base of 13,045 hectares. To learn more about the Osoyoos Indian Band, please visit the website provided:
+Placed between Oliver and Osoyoos, with a land base of 13,045 hectares.
 
 [www.oib.ca](www.oib.ca)
+
+## RR#3 S-25 C-1
+## Oliver, BC V0H 1T0
+## T: 250 - 498 - 3444 or Toll free: 1 - 888 - 498 - 3444
+## F: 250 - 498 - 6577
+
 
 
 #Lower Similkameen Indian Band
@@ -170,36 +219,59 @@ Placed between Oliver and Osoyoos, with a land base of 13,045 hectares. To learn
 - center: [49.1, -119.9]
 - zoom: 11
 ```
-![LSIB](images/lsib_logo.png)
+![drawing](images/lsib_logo_new.png)
 
 Chief: Keith Crow
 
-The Lower Similkameen Indian Band is located in the Similkameen Valley  in the South Okanagan. It is divided into 11 reserves with a land base of 15,276.4 hectares. To learn more about the Lower Similkameen Indian Band, please visit the website provided:
+The Lower Similkameen Indian Band is located in the Similkameen Valley  in the South Okanagan. It is divided into 11 reserves with a land base of 15,276.4 hectares.
 
 [www.lsib.net](www.lsib.net)
+
+## 500-7th Avenue, Keremeos, BC
+## Mailing Address:
+## PO Box 100, Keremeos, BC V0X IN0
+## T: 250 - 499 - 5528
+## F: 250 - 499 - 5538
+
 
 
 #Upper Similkameen Indian Band
 ```
-- center: [49.32, -120.23]
-- zoom: 10
+- center: [49.25, -120.23]
+- zoom: 11
 ```
-![USIB](images/usib_logo.png)
+![](images/usib_logo.png)
 
 Chief: Charlotte Mitchell
 
 The Upper Similkameen Indian Band comprises of 7 reserves with a land base of 2,708.5 hectares. Of the Okanagan Nation member communities it obtains the smallest population.  For more information please contact USIB Band office.
+
+## Location:
+## Mascot Mines Heritage Builiding
+## Mailing Address:
+## PO Box 220, Hedley, BC V0X 1K0
+## T: 250 - 292 - 8733
+## F: 250 - 292 - 8753
+
 
 #Confederated Tribes of the Colville
 ```
 - center: [48.2, -119.2]
 - zoom: 9
 ```
-![CCT](images/cct_logo.gif)
+![drawing](images/cct_logo.png)
 
-The Colville Reservation is known as an American Indian Tribe. The Colville Confederated Tribes Reservation land base is 2100 sq. kilometers. This Reservation was established in 1872, it formerly occupied twice the size of land. To learn more about the Colville Conferedated Tribes, please visit the website provided:
+The Colville Reservation is known as an American Indian Tribe. The Colville Confederated Tribes Reservation land base is 2100 sq. kilometers. This Reservation was established in 1872, it formerly occupied twice the size of land.
 
 [www.colvilletribes.com](www.colvilletribes.com)
+
+## PO Box 150
+## Nespelem Washington 99155
+## T: 509 - 634 - 2200 or 1 - 888 - 881 - 7684
+## Inchelium District: 509 - 722 - 7620
+## Omak District: 509 - 422 - 7420
+## F: 509 - 634 - 4116
+
 
 
 

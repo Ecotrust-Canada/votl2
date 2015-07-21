@@ -27,8 +27,8 @@ O.Template({
         unitylayer.addTo(map);
 		//coyotes.addTo(map);
         photolayer.addTo(map);
-        backbutton.addTo(map);
-        runbutton.addTo(map);
+        //backbutton.addTo(map);
+        //runbutton.addTo(map);
 		
 
         // enable keys to move

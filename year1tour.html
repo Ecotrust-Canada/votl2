@@ -35,9 +35,11 @@
     <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=place_name_areas_new_4326&fields=nsyilxcen&varname=placenames"></script>
 	<script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=coyote_lm&fields=label&varname=coyote"></script>
     <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=places&fields=Name,Nsyilxcen,Additional&varname=places"></script>
-    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=lakes&fields=Name,Nsyilxcen,Additional&varname=lakes"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=lakes&fields=Name,Nsyilxcen,Additional&varname=lakes&orderby=gid"></script>
     <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=unity_runs&fields=Name,url&varname=unity_runs"></script>
     <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=photopoints&fields=name,image&varname=photopoints"></script>
+    
+    
   
   
 </head>
@@ -45,14 +47,26 @@
   <div id="map" style="width: 100%; height: 100%;"></div>
 
   <div id="slides_container" style="display:block;">
-    <div id="dots"></div>
+    <div id = "wrapper" style="position:relative; margin-bottom:35px; height:100%; width:100%;">
+        <div id = "corner" style="float:right">
+            <a id="smaller" href='#' style="margin-top:30px;display:none;" onclick="Shrink();"><< Smaller</a>
+            <a id= "expand" href='#' style="margin-top:30px;" onclick="Expand();">Expand >></a>
+        </div>
+        <div id="dots"></div>
+    
 
-    <div id="slides"></div>
+
+        <div id="slides" style="margin-bottom:40px;"></div>
+    </div>
 
     <ul id="navButtons">
-      <li><a class="prev"></a></li>
-      <li><a class="next"></a></li>
+      <div id="run-button" style="position:relative;"><div style="position:absolute;bottom:4px;right:0;"><a href="unity_runs.html"><center>Run Overview</center></a></div></div>
+      <div id="home-button"><a href="frontpage.html"><center><img src="images/home_icon.svg" ></center></a></div>
+      <div id= "back"><li><a class="prev" style="margin-right:50px;"><center><img style="margin-left:7px"src="odyssey/sandbox/img/back.png" height="26px" ></center></a></li></div>
+      <div id= "forward"><li><a class="next" ><center><img style="margin-left:22px" src="odyssey/sandbox/img/forward.png" height="26px" ></center></a></li></div>
+      
     </ul>
+    
   </div>
 
   <div id="credits">
@@ -94,7 +108,7 @@
 ```
 ![LSIB](images/year1_1.jpg)
 
-Westbank, BC
+stqaɁtkwəłniwt – Tsinstikeptum 9, Westbank First Nation
 
 #2009
 ```
@@ -103,7 +117,7 @@ Westbank, BC
 ```
 ![LSIB](images/year1_2.jpg)
 
-Peachland 
+k’əłpəlmapqən - Peachland, BC 
 
 #2009
 ```
@@ -112,7 +126,7 @@ Peachland
 ```
 ![LSIB](images/year1_3.jpg)
 
-Peachland to Summerland 
+k’əłpəlmapqən to k’łchink – Peachland to Summerland, BC  
 
 #2009
 ```
@@ -121,7 +135,7 @@ Peachland to Summerland
 ```
 ![LSIB](images/year1_4.jpg)
 
-Run from Summerland to Penticton 
+k’łchink to snpíntktn – Summerland to Penticton, BC
 
 #2009
 ```
@@ -139,7 +153,7 @@ Run from Penticton to Keremeos
 ```
 ![LSIB](images/year1_6.jpg)
 
-Run from Keremeos to Chopaka 
+kłk’ər’míws to c’uṕaq - Run from Keremeos to Chopaka, BC
 
 #2009
 ```
@@ -148,7 +162,7 @@ Run from Keremeos to Chopaka
 ```
 ![LSIB](images/year1_7.jpg)
 
-Run from Chopaka to Osoyoos 
+c’uṕaq to swíws Run from Chopaka to Osoyoos, BC
 
 #2009
 ```
@@ -157,7 +171,7 @@ Run from Chopaka to Osoyoos
 ```
 ![LSIB](images/year1_8.jpg)
 
-Running past Spotted Lake 
+kłílxw - Running past Spotted Lake
 
 #2009
 ```
@@ -166,7 +180,7 @@ Running past Spotted Lake
 ```
 ![LSIB](images/year1_9.jpg)
 
-Running into Osoyoos 
+swíws  - Running into Osoyoos, BC 
 
 #2009
 ```
@@ -175,7 +189,7 @@ Running into Osoyoos
 ```
 ![LSIB](images/year1_10.jpg)
 
-Group Photo in Osoyoos 
+Group Photo at SenPokChin School in swíws
 
 
 

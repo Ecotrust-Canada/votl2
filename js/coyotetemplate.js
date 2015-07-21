@@ -23,7 +23,7 @@ O.Template({
 		//map.addLayer(markers);
 		
 		coyotes.addTo(map);
-        backbutton.addTo(map);
+        //backbutton.addTo(map);
 		
 
         // enable keys to move

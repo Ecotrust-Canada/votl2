@@ -70,3 +70,27 @@
 
       return t;
     }
+    
+    
+    function Expand() {
+        var elem2 = document.getElementById("expand");
+        elem2.style.display = "none";
+        var elem = document.getElementById("smaller");
+        elem.style.display = "block";
+        elem.style.marginTop = 0;
+        var slide = document.getElementById("slides_container");
+        slide.style.width = '50%';
+        slide.style.maxWidth = '500px';
+        var hash = location.hash;
+        location.hash = hash;
+      }
+      function Shrink() {
+        var elem = document.getElementById("smaller");
+        elem.style.display = "none";
+        var elem2 = document.getElementById("expand");
+        elem2.style.display = "block"; 
+        elem2.style.marginTop = 0;
+        var slide = document.getElementById("slides_container");
+        slide.style.width = '30%';
+        slide.style.maxWidth = '300px';
+      }

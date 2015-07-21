@@ -15,7 +15,7 @@
             // Don't stroke and do opaque fill
             layer.setStyle({
                 'weight': 0,
-                'fillOpacity': 0
+                'fillOpacity': 0,
             });
             // Get bounds of polygon
             var bounds = layer.getBounds();
@@ -36,9 +36,9 @@
         function highlightPlace(e) {
 			var layer = e.target;
 			layer.setStyle({
-				"color": "#6076B3",
+				"color": "#787878",
                 "opacity": 0,
-                "fillOpacity": 0.5,
+                "fillOpacity": 0.8,
 			});
 		}
 		//and reset
@@ -64,12 +64,13 @@
 				label = label.concat('<br>' + feature.properties.name);
 			}
             layer.bindLabel(label);
+            
 		}
         
 		var placenameStyle = {
-			"color": "#6076B3",
-			"opacity": 0,
-			"fillOpacity": 0
+			"color": "#787878",
+            "opacity": 0,
+            "fillOpacity": 0.3,
 		};
         
 		

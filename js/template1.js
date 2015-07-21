@@ -13,17 +13,14 @@ O.Template({
 		 */
 		layercontrol.addTo(map);
 		mouse.addTo(map);
-		//miniMap.addTo(map);
-		luplabel.addTo(map);
+		//luplabel.addTo(map);
 		onaboundary.addTo(map);
 		boundarylabel.addTo(map);
-		lupline.addTo(map);
+		//lupline.addTo(map);
 		placenameslayer.addTo(map).bringToFront();
 		reserves.addTo(map).bringToFront();
 		map.addLayer(markers);
-        //placenameslayerp.addTo(map);
-        //lakenamelayer.addTo(map);
-        backbutton.addTo(map);
+        //backbutton.addTo(map);
 		
 
         // enable keys to move
