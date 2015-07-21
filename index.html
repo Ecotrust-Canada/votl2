@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>VOTL</title>
+	<title>Voices On the Land</title>
 	<meta charset="utf-8" />
-
+    
     <link rel="icon" type="image/png" href="http://voicesontheland.org/projects/ce_atlas/group_images/Okanagan_Nation_Alliance949_3.jpg">
+
 	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
 	<link rel="stylesheet" href="leaflet/leaflet.css" />
 	<script src="leaflet/leaflet.js"></script>
@@ -23,7 +24,7 @@
     <!--Options: geotable - table name, fields - fields to include, varname  - javascript variable name-->
     <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=ona_boundary_line&fields=left_fid&varname=boundaryline"></script>
     <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=ona_landuseplan_boundary&fields=id&varname=lup"></script>
-    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=ona_ir&fields=nglshnm&varname=geojsonreserves"></script>
+    <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=reserves&fields=nglshnm&varname=geojsonreserves"></script>
     <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=place_name_areas_new_4326&fields=nsyilxcen&varname=placenames"></script>
 	<script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=coyote_lm&fields=label&varname=coyote"></script>
     <script src="http://voicesontheland.org/media/alex.php?srid=4326&geotable=places&fields=Name,Nsyilxcen,Additional&varname=places"></script>
@@ -33,51 +34,57 @@
 	
 	<style>
 	#map {
-			position:absolute;top:0;left:0;width:100%;height:100%
+			position:absolute;top:0;left:0;width:100%;height:100%;
 		}
         
     #titleblock{
         position: absolute;
-        top: 30px;
-        bottom:20px; 
-        left:40px; 
-        width:35%;
-        height: 80%;
-        max-width:400px; 
+        top: 50%;
+        left: 50%;
+        margin-top: -300px;
+        margin-left: -300px;
+        width: 600px;
+        height: 600px;
         box-shadow: 5px 5px 5px #5E5E5E;
         z-index:90;
         text-align: center;
     }
     #titleblock h1 {
+        font-family:'Times New Roman', serif;
+        color:#333;
+        font-size:48px;
+        margin: 30px 0 0 0;
+    }
+    #titleblock h2 {
         font-family:Garamond, serif;
         color:#333;
-        font-size:30px;
-        margin-bottom:10px;
+        font-size:36px;
+        margin: 10px 0 0 0;
     }
     #titleblock p {
-        font-family:Arial, sans-s;
+        font-family:Garamond, serif;
         color:#333;
-        font-size:17px;
-        margin-left:5px;
-        margin-right:5px;
-        text-align:center;
+        font-size:18px;
+        margin-left:50px;
+        margin-right:50px;
     }
     #titleblock hr { 
-        margin-left: 40px;
-        margin-right: 40px;
-        margin-bottom: 20px;
+        margin-left: 80px;
+        margin-right: 80px;
         weight: 5px;
     }
     .button {
+        margin-bottom: 20px;
+        margin-right: 10px;
         display: inline-block;
-        margin-bottom: 10px;
-        margin-left:10px;
         background-color: #317891;
-        height: 27px;
-        width: 110px;
+        height: 36px;
+        width: 120px;
         text-color: #F5F9FC;
         padding: 4px;
         opacity: 1;
+        position: relative;
+        text-align: center;
     }
     .button .label {
         text-align: center;
@@ -85,8 +92,8 @@
     }
     #titleblock .button a{
         color: #F5F9FC;
-        font-size: 18px;
-        font-family:'Arial', sans-s;
+        font-size: 12px;
+        font-family:Arial, sans-s;
         margin: auto;
         text-decoration: none;
     }
@@ -95,17 +102,14 @@
     text-decoration: underline;
     }
     #button-container {
-        position: absolute;
         width: 100%;
         height: 64px;
-        bottom:20px;
         padding-left: 6px;
     }
     .inner {
     position:absolute;
     width:100%;
     height:100%;
-    
     }
     .background{
     background-color:#F5F9FC;
@@ -114,47 +118,57 @@
     .content {
     z-index: 90;
     }
-    #click{
-    position:absolute;
-    bottom: 80px;
-    left:20px;
-    }
-    #home-button {
-    background-color:#858585; 
-    border-radius:5px; 
-    height:36px; 
-    width:36px;
+    .click{
+    text-align: left;
     margin-left:20px;
     }
-
-    #home-button img {
-    width:24; 
-    height:24;
-    margin-top:2px;
+    .click2{
+    text-align: right;
+    margin-left:20px;
+    margin-right:0px;
     }
-	</style>
-	
+    #titleblock h3 {
+        font-family:Arial, sans-s;
+        color:#333;
+        font-size:16px;
+        margin: 0 0 0 0;
+    }
+    #titleblock h4 {
+        font-family:Arial, sans-s;
+        color:#333;
+        font-size:12px;
+        margin: 0 0 0 0;
+    }
+    #forward {
+    background-color:#c7503e; border-radius:5px; height:36px; width:56px;display:inline-block;margin-right:30px; margin-left:10px;
+    }
 
-	
+	</style>	
 </head>
 <body>
 	<div id="map"></div>
-    <div id="titleblock">
-        <div class="inner content">
-            <h1>Spirit of Syilx Unity Run</h1>
-            <p>The Okanagan Nation “Spirit of the Syilx” Youth Unity Run has completed its seventh consecutive year. The aim of this annual event is to create awareness of high violence in our Nation, to promote Nationhood among the Youth, and to promote healthy living.<br><br> Click below to follow the story of the Unity Run from year to year</p>
-            <div class="button" style="background-color:#9F170C"><div class="label"><a href="year1tour.html">Year 1, 2009</a></div></div>
-            <div class="button" style="background-color:#87911E"><div class="label"><a href="year2tour.html">Year 2, 2010</a></div></div>
-            <div class="button" style="background-color:#E0BF3C"><div class="label"><a href="year3tour.html">Year 3, 2011</a></div></div>
-            <div class="button" style="background-color:#734DB3"><div class="label"><a href="year4tour.html">Year 4, 2012</a></div></div>
-            <div class="button" style="background-color:#26A4F1"><div class="label"><a href="year5tour.html">Year 5, 2013</a></div></div>
-            <div class="button" style="background-color:#031738"><div class="label"><a href="year6tour.html">Year 6, 2014</a></div></div>
-            <div class="button" style="background-color:#FE5936"><div class="label"><a href="year7tour.html">Year 7, 2015</a></div></div>
-            <div id="home-button"><a href="index.html"><center><img src="images/home_icon.svg" ></center></a></div>
+        <div id="titleblock">
+            <div class="inner content">
+                <h1>sqʷəlqʷltulaʔxʷ</h1>
+                <h2>Voices On The Land</h2>
+                <p>Voices on The Land is an exploration - and assertion - of the Okanagan Nation's relationship with its Lands. We invite you to explore the stories and the culture that have risen from this land since time immemorial.</p>
+                <div><img src="images/ona_logo.png" width="300px"></div>
+                
+                <div class="click"><p><b><i>Click on a tour below:</i></b></p></div>
+                <div id="button-container">
+                    <div class="button"><div class="label"><a href="nationstour.html">Okanagan Member Communities</a></div></div>
+                    <div class="button"><div class="label"><a href="coyotetour.html">Coyote Landmark Areas</a></div></div>
+                    <div class="button"><div class="label" style="top:10px;left:28px;"><a href="lakestour.html">Water Bodies</a></div></div>
+                    <div class="button"><div class="label" style="top:10px;left:28px;"><a href="unity_runs.html">Unity Runs</a></div></div>
+                </div>
+                <table style="width:100%"><tr>
+                <td><div class="click2"><p style="margin-right:0px;"><b><i>Move forward in each tour by clicking</i></b></p></div></td>
+                <td><div id= "forward"><img style="margin-left:5px; margin-top: 5px;" src="odyssey/sandbox/img/forward.png" height="26px" ></div></td>
+                </tr></table>
+            </div>
+            <div class="background inner">
+            </div>
         </div>
-        <div class="background inner">
-        </div>
-    </div>
 	
 
 	
@@ -164,7 +178,7 @@
   
   <script src="js/styles.js"></script>
   <script src="js/layers.js"></script>
-  <script src="js/unitymap.js"></script>
+  <script src="js/map.js"></script>
   
 	
 </body>
